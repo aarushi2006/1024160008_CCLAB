@@ -1,0 +1,414 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q1. Create a NumPy 1D Array and Perform Basic Operations"
+      ],
+      "metadata": {
+        "id": "Cn1AKWv3A11L"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K1QVA6vQAn57",
+        "outputId": "f5dc1373-83ec-4e1d-ac9a-3ff70f01c86c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [10 20 30 40 50]\n",
+            "After Adding 2: [12 22 32 42 52]\n",
+            "After Multiplying by 3: [ 30  60  90 120 150]\n",
+            "After Dividing by 2: [ 5. 10. 15. 20. 25.]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "\n",
+        "arr = np.array([10, 20, 30, 40, 50])\n",
+        "\n",
+        "print(\"Original Array:\", arr)\n",
+        "\n",
+        "\n",
+        "print(\"After Adding 2:\", arr + 2)\n",
+        "\n",
+        "\n",
+        "print(\"After Multiplying by 3:\", arr * 3)\n",
+        "\n",
+        "\n",
+        "print(\"After Dividing by 2:\", arr / 2)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q2(a). Reverse the NumPy Array"
+      ],
+      "metadata": {
+        "id": "mN9Pb2jPA3Dz"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "arr = np.array([1, 2, 3, 6, 4, 5])\n",
+        "\n",
+        "print(\"Original Array:\", arr)\n",
+        "\n",
+        "\n",
+        "reverse_arr = arr[::-1]\n",
+        "\n",
+        "print(\"Reversed Array:\", reverse_arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hr-1AhqQAydS",
+        "outputId": "9a6858e3-2b03-4094-de0d-231729a1ba54"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array: [1 2 3 6 4 5]\n",
+            "Reversed Array: [5 4 6 3 2 1]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q2(b)(i). Find Most Frequent Value and Indices"
+      ],
+      "metadata": {
+        "id": "cM5yKCX6A99v"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "arr = np.array([1, 2, 3, 4, 5, 1, 2, 1, 1, 1])\n",
+        "\n",
+        "\n",
+        "values, counts = np.unique(arr, return_counts=True)\n",
+        "\n",
+        "\n",
+        "most_freq = values[np.argmax(counts)]\n",
+        "\n",
+        "\n",
+        "indices = np.where(arr == most_freq)[0]\n",
+        "\n",
+        "print(\"Most Frequent Value:\", most_freq)\n",
+        "print(\"Indices:\", indices)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RShk0Ud5A-_W",
+        "outputId": "eb954348-9ad4-43ef-e8be-1e8ca6d01b6e"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Most Frequent Value: 1\n",
+            "Indices: [0 5 7 8 9]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q2(b)(ii). Find Most Frequent Value and Indices"
+      ],
+      "metadata": {
+        "id": "Fvxew3O6BBOk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "arr = np.array([1,1,1,2,3,4,2,4,3,3,3])\n",
+        "\n",
+        "values, counts = np.unique(arr, return_counts=True)\n",
+        "\n",
+        "most_freq = values[np.argmax(counts)]\n",
+        "\n",
+        "indices = np.where(arr == most_freq)[0]\n",
+        "\n",
+        "print(\"Most Frequent Value:\", most_freq)\n",
+        "print(\"Indices:\", indices)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4dFy7ZwDBE-s",
+        "outputId": "8d681f1e-54e3-4eff-c49c-7616f6397ddd"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Most Frequent Value: 3\n",
+            "Indices: [ 4  8  9 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q3. Access Elements from a 2D Array"
+      ],
+      "metadata": {
+        "id": "vC7dz9VPBGps"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "arr = np.array([[10,20,30],\n",
+        "                [40,50,60],\n",
+        "                [70,80,90]])\n",
+        "\n",
+        "print(\"Array:\")\n",
+        "print(arr)\n",
+        "\n",
+        "\n",
+        "print(\"1st Row, 2nd Column:\", arr[0,1])\n",
+        "\n",
+        "\n",
+        "print(\"3rd Row, 1st Column:\", arr[2,0])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "B473sCIBBI__",
+        "outputId": "62cf27fb-7e6d-4611-d255-d9df1989bbcc"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array:\n",
+            "[[10 20 30]\n",
+            " [40 50 60]\n",
+            " [70 80 90]]\n",
+            "1st Row, 2nd Column: 20\n",
+            "3rd Row, 1st Column: 70\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q4. Create a 1D Array Using linspace()"
+      ],
+      "metadata": {
+        "id": "fZmErN4TBLr1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "\n",
+        "Yashit_Arora = np.linspace(10, 100, 25)\n",
+        "\n",
+        "print(\"Array:\")\n",
+        "print(Yashit_Arora)\n",
+        "\n",
+        "\n",
+        "print(\"Shape:\", Yashit_Arora.shape)\n",
+        "\n",
+        "\n",
+        "print(\"Dimensions:\", Yashit_Arora.ndim)\n",
+        "\n",
+        "\n",
+        "print(\"Total Elements:\", Yashit_Arora.size)\n",
+        "\n",
+        "\n",
+        "print(\"Data Type:\", Yashit_Arora.dtype)\n",
+        "\n",
+        "\n",
+        "print(\"Bytes Consumed:\", Yashit_Arora.nbytes)\n",
+        "\n",
+        "\n",
+        "print(\"Transpose using transpose():\")\n",
+        "print(Yashit_Arora.transpose())\n",
+        "\n",
+        "\n",
+        "print(\"Transpose using T:\")\n",
+        "print(Yashit_Arora.T)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5MTVlQ33BN6i",
+        "outputId": "524bd281-4e26-4bcc-c243-ff8c21c0f94d"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array:\n",
+            "[ 10.    13.75  17.5   21.25  25.    28.75  32.5   36.25  40.    43.75\n",
+            "  47.5   51.25  55.    58.75  62.5   66.25  70.    73.75  77.5   81.25\n",
+            "  85.    88.75  92.5   96.25 100.  ]\n",
+            "Shape: (25,)\n",
+            "Dimensions: 1\n",
+            "Total Elements: 25\n",
+            "Data Type: float64\n",
+            "Bytes Consumed: 200\n",
+            "Transpose using transpose():\n",
+            "[ 10.    13.75  17.5   21.25  25.    28.75  32.5   36.25  40.    43.75\n",
+            "  47.5   51.25  55.    58.75  62.5   66.25  70.    73.75  77.5   81.25\n",
+            "  85.    88.75  92.5   96.25 100.  ]\n",
+            "Transpose using T:\n",
+            "[ 10.    13.75  17.5   21.25  25.    28.75  32.5   36.25  40.    43.75\n",
+            "  47.5   51.25  55.    58.75  62.5   66.25  70.    73.75  77.5   81.25\n",
+            "  85.    88.75  92.5   96.25 100.  ]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q5. Create a 2D Array and Perform Operations"
+      ],
+      "metadata": {
+        "id": "3jNNKNogBRJk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# Create 3x4 array\n",
+        "ucs420_yashit_arora = np.array([\n",
+        "    [10,20,30,40],\n",
+        "    [50,60,70,80],\n",
+        "    [90,15,20,35]\n",
+        "])\n",
+        "\n",
+        "print(\"Original Array:\")\n",
+        "print(ucs420_yashit_arora)\n",
+        "\n",
+        "\n",
+        "print(\"Mean:\", np.mean(ucs420_yashit_arora))\n",
+        "\n",
+        "\n",
+        "print(\"Median:\", np.median(ucs420_yashit_arora))\n",
+        "\n",
+        "\n",
+        "print(\"Maximum:\", np.max(ucs420_yashit_arora))\n",
+        "\n",
+        "\n",
+        "print(\"Minimum:\", np.min(ucs420_yashit_arora))\n",
+        "\n",
+        "\n",
+        "print(\"Shape:\", ucs420_yashit_arora.shape)\n",
+        "\n",
+        "\n",
+        "reshaped_ucs420_yashit_arora = ucs420_yashit_arora.reshape(4,3)\n",
+        "\n",
+        "print(\"\\nReshaped Array (4x3):\")\n",
+        "print(reshaped_ucs420_yashit_arora)\n",
+        "\n",
+        "\n",
+        "resized_ucs420_yashit_arora = np.resize(ucs420_yashit_arora, (2,6))\n",
+        "\n",
+        "print(\"\\nResized Array (2x6):\")\n",
+        "print(resized_ucs420_yashit_arora)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nqFdfdHpBRnz",
+        "outputId": "eb0391bf-eb08-488a-8744-bab75ed25d30"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Array:\n",
+            "[[10 20 30 40]\n",
+            " [50 60 70 80]\n",
+            " [90 15 20 35]]\n",
+            "Mean: 43.333333333333336\n",
+            "Median: 37.5\n",
+            "Maximum: 90\n",
+            "Minimum: 10\n",
+            "Shape: (3, 4)\n",
+            "\n",
+            "Reshaped Array (4x3):\n",
+            "[[10 20 30]\n",
+            " [40 50 60]\n",
+            " [70 80 90]\n",
+            " [15 20 35]]\n",
+            "\n",
+            "Resized Array (2x6):\n",
+            "[[10 20 30 40 50 60]\n",
+            " [70 80 90 15 20 35]]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
